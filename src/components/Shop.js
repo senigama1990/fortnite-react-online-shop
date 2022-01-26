@@ -1,13 +1,15 @@
 import { useState, useEffect } from 'react'
 import { API_URL, API_KEY } from "../config"
+import Cart from './Cart'
 import GoodList from './GoodsList'
 import Loader from './Loader'
 
 
 function Shop() {
 
-  const [ goods, setGoods] = useState([])
+  const [goods, setGoods] = useState([])
   const [loading, setLoading] = useState(true)
+  const [order, setOrder] = useState([])
 
   useEffect(() => {
     fetch(API_URL, {
@@ -20,10 +22,11 @@ function Shop() {
         setLoading(false)
       })
   }, [])
-  
+
   return (
     <div className="container content">
-      {loading ? <Loader /> : <GoodList goods={goods}/>}
+      <Cart quantity={order.length} />
+      {loading ? <Loader /> : <GoodList goods={goods} />}
     </div>
   )
 }

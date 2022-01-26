@@ -25,3 +25,18 @@ nav {
 .card-content {
   flex-grow: 1;
 }
+
+.cart {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  z-index: 5;
+  cursor: pointer;
+  padding: 1rem;
+}
+@media (min-width: 767px) {
+  .cart{
+    top: 5rem;
+    bottom: unset;
+  }
+}
