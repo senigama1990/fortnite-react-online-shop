@@ -35,8 +35,57 @@ nav {
   padding: 1rem;
 }
 @media (min-width: 767px) {
-  .cart{
+  .cart {
     top: 5rem;
     bottom: unset;
   }
+}
+
+.basket-list {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #fff;
+  width: 50rem;
+  max-width: 95%;
+  box-shadow: 0 6px 15px 0 rgba(0, 0, 0, 0.5);
+  animation: show 0.5s ease-in-out;
+}
+
+.basket-close {
+  cursor: pointer;
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  color: #fff;
+}
+.basket-delete {
+  cursor: pointer;
+}
+
+@keyframes show {
+  from {
+    top: 70%;
+    opacity: 0;
+  }
+  to {
+    top: 50%;
+    opacity: 1;
+  }
+}
+
+.bsk {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  overflow: hidden;
+}
+
+.btnq{
+  position: relative;
+  bottom: 10px;
 }
