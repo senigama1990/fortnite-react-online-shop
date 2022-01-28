@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react'
+import { toast } from 'react-toastify'
 import { API_URL, API_KEY } from "../config"
 import BasketList from './BasketList'
 import Cart from './Cart'
@@ -34,6 +35,7 @@ function Shop() {
       })
       setOrder(newOrder)
     }
+    toast.success('Goods added to the basket successfully')
   }
 
   const handleBasketShow = () => {
@@ -43,6 +45,7 @@ function Shop() {
   const removeFromBasket = (itemID) => {
     const newOrder = order.filter((item) => item.id !== itemID)
     setOrder(newOrder)
+    toast.error('Goods deleted from the basket successfully')
   }
 
   const incrementQuantity = (itemID) => {
